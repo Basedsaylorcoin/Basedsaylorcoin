@@ -11,7 +11,7 @@
             /* Default to light mode */
             background-color: #ffffff;
             color: #333;
-            font-family: Arial, sans-serif;
+            font-family: 'Courier New', monospace; /* More crypto-themed */
             line-height: 1.6;
             margin: 0;
             padding: 20px;
@@ -27,16 +27,19 @@
         }
 
         h1, h2, h3 {
-            color: #007BFF; /* A vibrant color that stands out in both themes */
+            color: #ff6347; /* Tomato color for a playful yet professional look */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
         a, a:hover, a:visited {
-            color: #0056b3;
+            color: #ff6347;
             text-decoration: none;
+            transition: color 0.3s;
         }
 
         a:hover {
             text-decoration: underline;
+            color: #ff4500; /* Darker orange on hover for interaction feedback */
         }
 
         ul {
@@ -46,10 +49,21 @@
 
         li {
             margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        li::before {
+            content: "•"; /* Bullet point */
+            color: #ff6347;
+            position: absolute;
+            left: 0;
+            font-size: 1.5em;
+            top: -2px;
         }
 
         button {
-            background-color: #007BFF;
+            background-color: #ff6347;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -59,44 +73,65 @@
             font-size: 16px;
             margin: 4px 2px;
             cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
         button:hover {
-            background-color: #0056b3;
+            background-color: #ff4500;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
         }
 
         /* Dark mode button adjustments */
         @media (prefers-color-scheme: dark) {
             button {
-                background-color: #6c757d;
+                background-color: #ff6347;
             }
             button:hover {
-                background-color: #5a6268;
+                background-color: #ff4500;
+            }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .container {
+                background: rgba(0,0,0,0.3);
             }
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to Based Saylor Fun (BSLR)</h1>
-    <p>Based Saylor Fun is a meme token based on Michael Saylor of Microstrategy. The total supply is 21000000 Based Saylor Fun tokens initially paired with 0.00004500 Coinbase Wrapped Bitcoin on  The Base Blockchain in a Uniswap V2 liquidity pool with burned Liquidity Provider tokens.</p>
-    <p>Until the first 2100 buy transactions are completed no address can hold more than 5000 BSLR tokens. This means that a single address can buy at most 5k tokens during this time. After that the next 210 buy transactions have a limit of 50k BSLR per address. And then after transaction 2310 no limits apply and BSLR becomes a standard token. Also the selling is disabled until 2310 buy transactions pass.</p>
-    <p>Contract Address on Base: 0x7c242DA2Cc825b49A143FA030b3A9499804Be291</p>
-    <h2>Links:</h2>
-    <ul>
-        <li><h3><a href="https://basescan.org/token/0x7c242da2cc825b49a143fa030b3a9499804be291#code" target="_blank">BaseScan Token Contract</a></h3></li>
-        <li><h3><a href="https://x.com/basedsaylor" target="_blank">X (@basedsaylor)</a></h3></li>
-        <li><h3><a href="https://t.me/BSLR_fun" target="_blank">Telegram Group For Chat</a></h3></li>
-        <li><h3><a href="https://bitcointalk.org/index.php?topic=5520083" target="_blank">Bitcointalk Post</a></h3></li>
-        <li><h3><a href="https://github.com/Basedsaylorcoin/Basedsaylorcoin" target="_blank">Github/Basedsaylorcoin</a></h3></li>
-        <li><h3><a href="https://coinmarketcap.com/dexscan/base/0xab59d4e3dacce9f72a51fa477f3312531a45c610/" target="_blank">CoinMarketCap BSFR/cbBTC Pair Statistics</a></h3></li>
-    </ul>
+    <div class="container">
+        <h1>Welcome to Based Saylor Fun (BSLR)</h1>
+        <p>Based Saylor Fun is a meme token based on Michael Saylor of Microstrategy. The total supply is 21000000 Based Saylor Fun tokens initially paired with 0.00004500 Coinbase Wrapped Bitcoin on The Base Blockchain in a Uniswap V2 liquidity pool with burned Liquidity Provider tokens.</p>
+        <p>Until the first 2100 buy transactions are completed no address can hold more than 5000 BSLR tokens. This means that a single address can buy at most 5k tokens during this time. After that the next 210 buy transactions have a limit of 50k BSLR per address. And then after transaction 2310 no limits apply and BSLR becomes a standard token. Also, the selling is disabled until 2310 buy transactions pass.</p>
+        <p>Contract Address on Base: <code>0x7c242DA2Cc825b49A143FA030b3A9499804Be291</code></p>
+        <h2>Links:</h2>
+        <ul>
+            <li><h3><a href="https://basescan.org/token/0x7c242da2cc825b49a143fa030b3a9499804be291#code" target="_blank">BaseScan Token Contract</a></h3></li>
+            <li><h3><a href="https://x.com/basedsaylor" target="_blank">X (@basedsaylor)</a></h3></li>
+            <li><h3><a href="https://t.me/BSLR_fun" target="_blank">Telegram Group For Chat</a></h3></li>
+            <li><h3><a href="https://bitcointalk.org/index.php?topic=5520083" target="_blank">Bitcointalk Post</a></h3></li>
+            <li><h3><a href="https://github.com/Basedsaylorcoin/Basedsaylorcoin" target="_blank">Github/Basedsaylorcoin</a></h3></li>
+            <li><h3><a href="https://coinmarketcap.com/dexscan/base/0xab59d4e3dacce9f72a51fa477f3312531a45c610/" target="_blank">CoinMarketCap BSFR/cbBTC Pair Statistics</a></h3></li>
+        </ul>
 
-    <div>
-        <p>How to buy: You will need around 0.00002 ETH on base chain for transaction fees and 0.00000001 cbBTC (1 Coinbase Wrapped satoshi) for the actual trade. Manually set for output Network Base and for output coin the contract address address of BSLR (0x7c242DA2Cc825b49A143FA030b3A9499804Be291), accept the warning that the token is not traded on any leading US exchange and buy with 0.00000001 cbBTC.</p>
-        <a href="https://app.uniswap.org/#/swap?exactField=input&exactAmount=1&outputCurrency=0x7c242DA2Cc825b49A143FA030b3A9499804Be291&inputCurrency=0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf" target="_blank">
-            <button>Buy Saylor Fun (BSLR)</button>
-        </a>
+        <div>
+            <p>How to buy: You will need around 0.00002 ETH on the Base chain for transaction fees and 0.00000001 cbBTC (1 Coinbase Wrapped satoshi) for the actual trade. Manually set for output Network Base and for output coin the contract address of BSLR (0x7c242DA2Cc825b49A143FA030b3A9499804Be291), accept the warning that the token is not traded on any leading US exchange and buy with 0.00000001 cbBTC.</p>
+            <a href="https://app.uniswap.org/#/swap?exactField=input&exactAmount=1&outputCurrency=0x7c242DA2Cc825b49A143FA030b3A9499804Be291&inputCurrency=0xcbB7C0000aB88B473b1f5aFd9ef808440eed333Bf" target="_blank">
+                <button>Buy Saylor Fun (BSLR)</button>
+            </a>
+            <p>And always remember, the big money is not in the buying and selling, but in the waiting.</p>
+        </div>
     </div>
 </body>
 </html>
